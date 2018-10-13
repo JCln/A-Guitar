@@ -1,0 +1,46 @@
+<div class="container-fluid  justify-content-end">
+  <div class="row col-sm-3 col-md-1 fixed-top" style="margin-top:5.5rem; padding-left:2.7rem;">
+    <div class=" justify-content-start ">
+        <i (click)="show = !show" class="fa fa-align-left btn btn-info"></i>
+        <!-- <i class="fa fa-align-right btn btn-info" data-toggle="collapse" data-target="#sidebar" aria-hidden="true" aria-expanded="true"
+        aria-controls="sidebar" ng-click="var that = this; setTimeout(function() {
+          that.parentNode.style.flex = 'auto';that.parentNode.style['max-width'] = 'none';
+        }, 2000);"></i> -->
+
+    </div>
+  </div>
+</div>
+<nav class="sidenav"  style="background-color: #00ACC1" [hidden]="!show">
+    <a>
+      <img src="../../../../assets/logo.png">
+    </a>
+
+    <a class="nav-link" routerLink="/videoList" routerLinkActive="active">
+      <i class="fa fa-music"></i>
+    </a>
+
+    <a class="nav-link" [routerLink]="['/addNote']" routerLinkActive="active">
+      <i class="fa fa-bookmark-o"></i>
+    </a>
+
+    <a class="nav-link" routerLink="/" routerLinkActive="active">
+      <i class="fa fa-info"></i>
+    </a>
+
+    <a class="nav-link" [routerLink]= "['/login']"  routerLinkActive="active">
+      <!-- [routerLink]= "['../Login']" -->
+      <i class="fa fa-sign-in"></i>
+    </a>
+  </nav>
+
+  <!-- <li *ngIf="isLoggedIn" class="nav-item" routerLinkActive="active">
+              <a class="nav-link" (click)="logout()">LogOff {{displayName}}</a>
+            </li>
+
+            <li *ngIf="isLoggedIn" routerLinkActive="active">
+              <a [routerLink]="['/callProtectedApi']">‍‍Call Protected Api</a>
+            </li>
+
+            <li *ngIf="isLoggedIn" class="nav-item" routerLinkActive="active">
+              <a class="nav-link" [routerLink]="['/protectedPage']">Protected Page</a>
+            </li> -->

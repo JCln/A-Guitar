@@ -1,0 +1,128 @@
+<div class="fixed-image-notes">
+    <div class="body">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div style="font-size: 2.2rem; margin: 5rem 2rem 3rem 2rem;" class="text-primary">
+                    <i class="fa fa-tasks"></i>{{ variable.checkTotalLangV ? 'آموزش' : 'Lesson'}}</div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="justify-content-center" *ngFor="let Tvideos of videolist; trackBy: trackByFn">
+
+                    <div class="text-primary">{{Tvideos.level}}
+                        <hr>
+                    </div>
+                    <div class="justify-content-center">
+                        <div class="justify-content-center col-sm-12 col-md-4 col-lg-4 float-left" style="margin-bottom: 3rem;"
+                            *ngFor="let video of Tvideos.videos; let i = index">
+
+                            <div class="element">
+                                <img class="card-img-top position-relative float-left" class="image" (error)="ImgErrorHandler($event)"
+                                    src={{video.src}} alt="Card image cap">
+
+                                <button *ngIf="!variable.checkTotalLangV && !video.isFree" class="btn btn-warning middle">{{video.isFree
+                                    ? 'تکمیل خرید' : 'Complete the purchase'}}</button>
+                                <button *ngIf="variable.checkTotalLangV && !video.isFree" class="btn btn-warning middle">{{video.isFree
+                                    ? 'Complete the purchase' : 'تکمیل خرید'}}</button>
+                            </div>
+
+
+                            <div class="justify-content-center">
+                                <h4 style="text-align: left; float: left">
+                                    <span *ngIf="variable.checkTotalLangV" class="badge badge-primary">{{video.isFree ?
+                                        free : sale}}</span>
+                                    <span *ngIf="!variable.checkTotalLangV" class="badge" style="background-color: #009688">{{video.isFree
+                                        ? 'free' : 'sale'}}</span>
+                                </h4>
+                                <h5 style="text-align: right">
+                                    <span class="badge badge-light">{{i+1}}</span>
+                                </h5>
+                            </div>
+
+                            <div *ngIf="!variable.checkTotalLangV" class="card-body text-white" style="background-color: #009688">
+                                <p class="card-text">Some text.</p>
+                            </div>
+
+                            <div *ngIf="variable.checkTotalLangV" class="card-body bg-primary text-white">
+                                <p class="card-text" style="text-align: right">خوب قیمتی دارد</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+<!-- <app-header></app-header>
+<app-sidenav></app-sidenav>
+<div class="body">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div style="font-size: 2.2rem; margin: 5rem 2rem 3rem 2rem;" class="text-danger">
+        <i class="fa fa-tasks"></i>{{ variable.checkTotalLangV ? 'آموزش' : 'Lesson'}}</div>
+    </div>
+
+    <div class="row justify-content-center">
+      <div *ngFor="let Tvideos of videolist">
+
+        <div class="text-primary">{{Tvideos.level}}<hr></div>
+        <div class="justify-content-center col-sm-12 col-md-4 col-lg-3 float-left" style="margin: .5rem" *ngFor="let video of Tvideos.videos; let i = index">
+
+          <img class="card-img-top position-relative float-left" (error)="ImgErrorHandler($event)" src={{video.src}} alt="Card image cap">
+
+          <div class="position-absolute">
+            <h4 style="text-align: left; float: left">
+              <span class="badge badge-info">{{video.isFree ? free : sale}}</span>
+            </h4>
+            <h5 style="text-align: right">
+              <span class="badge badge-light">{{i}}</span>
+            </h5>
+          </div>
+
+          <div class="card-body bg-primary text-white">
+            <p *ngIf="!variable.checkTotalLangV" class="card-text">Some text.</p>
+            <p *ngIf="variable.checkTotalLangV" class="card-text">خوب قیمتی دارد</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div> -->
+<!--
+script>
+        var controller = new ScrollMagic();
+      </script>
+      <div class="spacer s2"></div>
+      <div id="trigger1" class="spacer s0"></div>
+      <div id="animate1" class="box2 skin">
+        <p>I'm angry</p>
+      </div>
+      <div class="spacer s2"></div>
+      <script>
+      </script>
+<script>
+    var controller = new ScrollMagic.Controller();
+  </script>
+  <div class="spacer s2"></div>
+  <div id="trigger1" class="spacer s0"></div>
+  <div id="animate1" class="box2 skin">
+    <p>I'm angry</p>
+  </div>
+  <div class="spacer s2"></div>
+  <script>
+    var scene = new ScrollMagic.Scene({
+      triggerElement: "#trigger1"
+    })
+    .setTween("#animate1", 0.5 , {backgroundColor: "green", scale: 2.5 }).addIndicators({name: "1 (duration: 0)"}).addTo(controller);
+  </script> -->

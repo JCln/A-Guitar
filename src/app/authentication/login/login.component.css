@@ -1,0 +1,9 @@
+#img-login {
+  /* background: no-repeat , center;
+  background-color: transparent; */
+  position: absolute;
+  z-index: 0;
+  opacity: .3;
+  width: 100%;
+  height: 100%;
+}

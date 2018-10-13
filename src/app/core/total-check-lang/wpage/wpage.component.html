@@ -1,0 +1,245 @@
+<section id="Home">
+  <!-- <app-header>
+  </app-header> -->
+
+  <div id="header">
+
+    <div class="container-fluid">
+      <div class="row">
+
+        <div class="col-sm-12 col-md-3 element">
+          <div class="col-sm-12 col-md-12 new-overlay" id="firstOverlay">
+            <div class="main-first">
+              <a class="main-first-ALink" [routerLink]= "['/Info']">
+                <i class="main-first-I fa fa-info">{{variable.checkTotalLangV ? 'درباره' : 'About'}}</i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-12 col-md-3 element">
+          <div class="col-sm-12 col-md-12 new-overlay" id="secondOverlay">
+            <div class="main-first">
+              <a class="main-first-ALink" [routerLink]="['/videoList']">
+                <i class="main-first-I fa fa-video-camera">{{variable.checkTotalLangV ? 'ویدیو' : 'Video'}}</i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-12 col-md-3 element">
+          <div class="col-sm-12 col-md-12 new-overlay" id="firstOverlay">
+            <div class="main-first">
+              <a class="main-first-ALink" [routerLink]="['/addNote']">
+                <i class="main-first-I fa fa-files-o">{{variable.checkTotalLangV ? 'نٌت' : 'Note'}}</i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-12 col-md-3 element">
+          <div class="col-sm-12 col-md-12 new-overlay" id="secondOverlay">
+            <div class="main-first">
+              <a class="main-first-ALink" [routerLink]="['/PT']" >
+                <i class="main-first-I fa fa-line-chart">{{variable.checkTotalLangV ? 'آموزش خصوصی' : 'private Tutoring'}}</i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- event section id removed -->
+<section id="Events">
+  <app-carousel></app-carousel>
+</section>
+
+
+<!-- <section id="PracticeVideos" class="font-size-text">
+
+  <div class="card" style="background-color: black;">
+    <div class="card-title justify-content-end">
+      <h3 class="text-light titleNames-margin">Practice Videos</h3>
+    </div>
+
+    <div class="container-fluid" style="margin-top: 7rem;">
+
+      <div class="row justify-content-center">
+
+        <div class="col-lg-3">
+          <video class="" width="100%" controls style="opacity: 1;">
+            <source src="../../../../assets/v1.mp4" type="video/mp4">
+            <source src="mov_bbb.ogg" type="video/ogg"> Your browser does not support HTML5 video.
+          </video>
+          <div class="card-body text-light text-aligment">
+            <h4 class="card-title" contenteditable="true">Train</h4>
+            <p class="card-text" contenteditable="true">متن آزمایشی متن آزمایشی متن آزمایشی متن آزمایشی متن آزمایشی متن آزمایشی متن آزمایشی متن آزمایشیمتن آزمایشیمتن
+              آزمایشیمتن آزمایشی
+            </p>
+          </div>
+        </div>
+
+        <div class="col-lg-3" style="margin-right: 1em;">
+          <video width="100%" controls>
+            <source src="../../../../assets/v1.mp4" type="video/mp4">
+            <source src="mov_bbb.ogg" type="video/ogg"> Your browser does not support HTML5 video.
+          </video>
+          <div class="card-body text-light text-aligment">
+            <h4 class="card-title" contenteditable="true">Train</h4>
+            <p class="card-text" contenteditable="true">متن آزمایشی متن آزمایشی متن آزمایشی متن آزمایشی متن آزمایشی متن آزمایشی متن آزمایشی متن آزمایشیمتن آزمایشیمتن
+              آزمایشیمتن آزمایشی
+
+            </p>
+          </div>
+        </div>
+
+        <div class="col-lg-3" style="margin-right: 1em;">
+          <video width="100%" controls>
+            <source src="../../../../assets/v1.mp4" type="video/mp4">
+            <source src="mov_bbb.ogg" type="video/ogg"> Your browser does not support HTML5 video.
+          </video>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section> -->
+
+<!-- <section id="GuitarHistory"> -->
+
+  <!-- <div class="container-fluid">
+  <div class="row">
+    <div class="col col-12 col-sm-12 col-md-12" style="background-color: orange; z-index: 1;">
+
+      <div class="card" style="background-color: #262626;">
+
+        <div class="card-title justify-content-end">
+          <h3 class="text-light titleNames-margin">Guitar History</h3>
+        </div>
+
+        <div class="col col-lg-5 history-card-body">
+          <div class="card-body text-light history-card">
+            <h4 class="card-title history-card-title">Train</h4>
+            <p class="card-text">some text ssssssss some text some text some text some text some textsome textsome textsome textsome textsome
+              textsome textsome textsome text </p>
+            <button class="history-card-button" data-toggle="collapse" data-target="#hc1">More</button>
+            <div id="hc1" class="collapse">
+              Lorem ipsum dolor text.... Lorem ipsum dolor text.... Lorem ipsum dolor text.... Lorem ipsum dolor text.... Lorem ipsum dolor
+              text.... Lorem ipsum dolor text....
+            </div>
+          </div>
+        </div>
+        <div class="col col-lg-5 history-card-body">
+          <div class="card-body text-light history-card">
+            <h4 class="card-title history-card-title">Train</h4>
+            <p class="card-text">some text ssssssss some text some text some text some text </p>
+            <button class="history-card-button" data-toggle="collapse" data-target="#hc2">More</button>
+            <div id="hc2" class="collapse">
+              Lorem ipsum dolor text.... Lorem ipsum dolor text.... Lorem ipsum dolor text.... Lorem ipsum dolor text.... Lorem ipsum dolor
+              text.... Lorem ipsum dolor text.... text.... Lorem ipsum dolor text.... text.... Lorem ipsum dolor text....
+              text.... Lorem ipsum dolor text.... text.... Lorem ipsum dolor text.... text.... Lorem ipsum dolor text....
+              text.... Lorem ipsum dolor text.... text.... Lorem ipsum dolor text....
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div> -->
+
+
+<!--
+  <div class="card" style="background-color: #262626;" id="">
+    <div class="card-title justify-content-center">
+      <h3 class="text-light titleNames-margin">Guitar History</h3>
+    </div>
+    <div class="container-fluid" style="margin-top: 7rem;">
+      <div class="row justify-content-center col-sm col-sm-12 col-md-12">
+
+        <div class="history-card-body col-sm-12 col-md-6 col-lg-5">
+          <div class="card-body text-light history-card text-aligment">
+            <h4 class="card-title history-card-title" contenteditable="true">Train</h4>
+            <p class="card-text" contenteditable="true">some text ssssssss some text some text some text some text some textsome textsome textsome textsome textsome
+              textsome textsome textsome text </p>
+            <button class="history-card-button" data-toggle="collapse" data-target="#hc1">More</button>
+            <div id="hc1" class="collapse" contenteditable="true">
+              Lorem ipsum dolor text.... Lorem ipsum dolor text.... Lorem ipsum dolor text.... Lorem ipsum dolor text.... Lorem ipsum dolor
+              text.... Lorem ipsum dolor text....
+            </div>
+          </div>
+        </div>
+        <div class="history-card-body col-sm-12 col-md-6 col-lg-5">
+          <div class="card-body text-light history-card  text-aligment">
+            <h4 class="card-title history-card-title" contenteditable="true">Train</h4>
+            <p class="card-text" contenteditable="true">some text ssssssss some text some text some text some text </p>
+            <button class="history-card-button" data-toggle="collapse" data-target="#hc2">More</button>
+            <div id="hc2" class="collapse" contenteditable="true">
+              Lorem ipsum dolor text.... Lorem ipsum dolor text.... Lorem ipsum dolor text.... Lorem ipsum dolor text.... Lorem ipsum dolor
+              text.... Lorem ipsum dolor text.... text.... Lorem ipsum dolor text.... text.... Lorem ipsum dolor text....
+              text.... Lorem ipsum dolor text.... text.... Lorem ipsum dolor text.... text.... Lorem ipsum dolor text....
+              text.... Lorem ipsum dolor text.... text.... Lorem ipsum dolor text....
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div> -->
+
+<!-- </section> -->
+
+
+
+
+
+
+<!-- <section id="Videos" class="v-margin-top">
+  <div class="card-body" style="background-color: #262626" id="se-to-TP">
+    <div class="card-title">
+      <h3 class="text-light titleNames-margin">Videos</h3>
+    </div>
+
+    <div class="container-fluid" style="margin-top: 7rem;">
+
+      <div class="row justify-content-center font-size-text">
+
+        <div class="col-sm-12 col-lg-7">
+          <video class="" width="100%" controls>
+            <source src="../../../assets/v1.mp4" type="video/mp4">
+            <source src="mov_bbb.ogg" type="video/ogg"> Your browser does not support HTML5 video.
+          </video>
+          <div class="card-body text-light video-text-bottom-margin">
+            <h4 class="card-title">Train</h4>
+            <p class="card-text">some text ssssssss some text some text some text some text </p>
+          </div>
+        </div>
+
+        <div class="col-lg-7">
+          <video class="" width="100%" controls>
+            <source src="../../../assets/23.mp4" type="video/mp4">
+            <source src="mov_bbb.ogg" type="video/ogg"> Your browser does not support HTML5 video.
+          </video>
+          <div class="card-body text-light video-text-bottom-margin">
+            <h4 class="card-title">Train</h4>
+            <p class="card-text">some text ssssssss some text some text some text some text </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section> -->
+<!-- </div> -->
+<!-- </div> -->
+<h1>{{title}}</h1>
+<div class="alert alert-info">
+  <label> Access Token Expiration Date:</label> {{accessTokenExpirationDate}}
+</div>
+
+<div>
+  <pre>{{decodedAccessToken | json}}</pre>
+</div>

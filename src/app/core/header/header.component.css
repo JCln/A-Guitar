@@ -1,0 +1,191 @@
+* {
+  font-family: B Nazanin;
+  font-size: 1.4rem;
+}
+
+.flex-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}
+
+@media only screen and (max-width: 576px) {
+  #Home {
+    width: 36rem;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  #GuitarHistory {
+    width: 36rem;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  #Videos {
+    width: 36rem;
+  }
+}
+
+.text-color-size {
+  color: white;
+  font-size: 1.2rem;
+}
+
+.header-text-full {
+  padding-top: 20rem;
+}
+
+#header-text {
+  color: #d9524a;
+  font-size: 2rem;
+}
+
+#Videos {
+  width: 100%;
+}
+
+.header {
+  width: 100%;
+  height: 48rem;
+  background: url(../../../assets/p39.jpeg) no-repeat;
+  background-size: cover;
+}
+
+.t-margin-top {
+  margin-top: 3rem;
+}
+
+li {
+  margin-right: .5rem;
+}
+
+.active :hover {
+  /* border-bottom: #d9524a; */
+  background-color: #d9524a;
+}
+
+#Events {
+  width: 100%;
+  min-width: 36rem;
+  height: 47rem;
+  background: url('../../../assets/p30.jpeg');
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.titleNames-margin {
+  margin-top: 4rem;
+}
+
+.switch {
+  padding-top: 1.4rem;
+}
+
+.fixed-top {
+  opacity: .9;
+  background-color: rgba(255, 255, 255, .2);
+}
+
+.fixed-top :hover {
+  color:  white;
+  opacity: 1;
+}
+
+.nav :hover {
+  opacity: 1;
+  background-color: #323232;
+}
+
+/* .navbar-brand:hover,
+.navbar-nav .nav-item .nav-link:hover {
+  border-bottom: .7rem solid white;
+} */
+
+.carousel-inner {
+  margin-top: 1rem;
+}
+
+.carousel-item {
+  width: 43rem;
+  /* margin-top: 18rem; */
+}
+
+/*forrrrrrrrrrr noOOOOOwwwwwwww  @media only screen and (max-width: 576) {
+  .carousel-item {
+    width: 20rem;
+  }
+} */
+
+@media only screen and (max-width: 576px) {
+  #PracticeVideos {
+    width: 36rem;
+  }
+}
+
+#practiceVideos {
+  height: 30rem;
+  width: 100%;
+}
+
+.carousel-next-prev-display {
+  display: block;
+}
+
+.font-size-text {
+  font-size: 1.2rem;
+}
+
+.text-aligment {
+  text-align: right;
+}
+
+@media only screen and (max-width: 576px) {
+  #se-to-TP {
+    position: absolute;
+    width: 36rem;
+    min-height: 30rem;
+  }
+}
+
+.history-card {
+  background: #323232;
+}
+
+.history-card-title {
+  text-align: center;
+  background: #6863ce;
+  padding: 1rem 1rem;
+}
+
+@media only screen and (max-width: 770px) {
+  .history-card-body {
+    margin-bottom: 2rem;
+  }
+}
+
+.history-card-body {
+  padding: 0 2rem;
+  font-size: 1.2rem;
+}
+
+.history-card-button {
+  background: #6863ce;
+  border-radius: .8rem;
+  color: white;
+  /* margin-left: 13rem; */
+  border: #6863ce;
+  font-size: 1.2rem;
+  padding: .5rem 1.5rem;
+}
+
+.history-card-button:hover {
+  box-shadow: 0 .1rem .1rem 0 #6863ce, .1rem .1rem #6863ce;
+}
+
+#brand-logo {
+  height: 3rem;
+  width: 9rem;
+}

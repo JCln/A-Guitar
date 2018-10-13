@@ -1,0 +1,11 @@
+<button *ngIf="isAdmin" (click)="callMyProtectedAdminApiController()">
+    Call Protected Admin API [Authorize(Roles = "Admin")]
+  </button>
+
+  <button *ngIf="isAdmin || isUser" (click)="callMyProtectedApiController()">
+    Call Protected API ([Authorize])
+  </button>
+
+  <div *ngIf="result">
+    <pre>{{result | json}}</pre>
+  </div>
