@@ -1,34 +1,35 @@
 $font-size-base: 1.5rem;
 $font-size-lg: ($font-size-base * 1.25);
-$font-size-sm: ($font-size-base * .875);
+$font-size-sm: ($font-size-base * 0.875);
 $input-height: 2.375rem;
 $input-height-sm: 1.9375rem;
 $input-height-lg: 3rem;
-$input-btn-focus-width: .2rem;
+$input-btn-focus-width: 0.2rem;
 $custom-control-indicator-bg: #dee2e6;
 $custom-control-indicator-disabled-bg: #e9ecef;
 $custom-control-description-disabled-color: #868e96;
 $white: white;
 $theme-colors: (
-  'primary': #d95243
+  "primary": #d95243
 );
 
 //
 // These variables can be used to customize the switch component.
 //
-$switch-height: calc(#{$input-height} * .8) !default;
-$switch-height-sm: calc(#{$input-height-sm} * .8) !default;
-$switch-height-lg: calc(#{$input-height-lg} * .8) !default;
+$switch-height: calc(#{$input-height} * 0.8) !default;
+$switch-height-sm: calc(#{$input-height-sm} * 0.8) !default;
+$switch-height-lg: calc(#{$input-height-lg} * 0.8) !default;
 $switch-border-radius: $switch-height !default;
 $switch-bg: $custom-control-indicator-bg !default;
-$switch-checked-bg: map-get($theme-colors, 'primary') !default;
+$switch-checked-bg: map-get($theme-colors, "primary") !default;
 $switch-disabled-bg: $custom-control-indicator-disabled-bg !default;
 $switch-disabled-color: $custom-control-description-disabled-color !default;
 $switch-thumb-bg: $white !default;
 $switch-thumb-border-radius: 50% !default;
 $switch-thumb-padding: 2px !default;
-$switch-focus-box-shadow: 0 0 0 $input-btn-focus-width rgba(map-get($theme-colors, 'primary'), .25);
-$switch-transition: .2s all !default;
+$switch-focus-box-shadow: 0 0 0 $input-btn-focus-width
+  rgba(map-get($theme-colors, "primary"), 0.25);
+$switch-transition: 0.2s all !default;
 
 .switch {
   font-size: $font-size-base;
@@ -56,12 +57,12 @@ $switch-transition: .2s all !default;
       outline: none;
       user-select: none;
       vertical-align: middle;
-      text-indent: calc(calc(#{$switch-height} * 2) + .5rem);
+      text-indent: calc(calc(#{$switch-height} * 2) + 0.5rem);
     }
 
     + label::before,
     + label::after {
-      content: '';
+      content: "";
       position: absolute;
       top: 0;
       left: 0;
@@ -69,7 +70,6 @@ $switch-transition: .2s all !default;
       bottom: 0;
       display: block;
     }
-
 
     + label::before {
       right: 0;
@@ -120,7 +120,7 @@ $switch-transition: .2s all !default;
         min-width: calc(#{$switch-height-sm} * 2);
         height: $switch-height-sm;
         line-height: $switch-height-sm;
-        text-indent: calc(calc(#{$switch-height-sm} * 2) + .5rem);
+        text-indent: calc(calc(#{$switch-height-sm} * 2) + 0.5rem);
       }
 
       + label::before {
@@ -144,14 +144,3 @@ $switch-transition: .2s all !default;
     margin-left: 1rem;
   }
 }
-
-//
-// Demo only
-//
-// body {
-//   padding: 1rem;
-// }
-
-// .dropdown-menu {
-//   margin-top: .75rem;
-// }

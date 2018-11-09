@@ -1,13 +1,51 @@
 <section id="Home">
-  <!-- <app-header>
-  </app-header> -->
 
   <div id="header">
 
     <div class="container-fluid">
       <div class="row">
 
+
         <div class="col-sm-12 col-md-3 element">
+          <div class="new-overlay firstOverlay">
+            <div class="main-first">
+              <a class="main-first-ALink" [routerLink]="['/Info']">
+                <i class="main-first-I fa fa-info">{{variable.checkTotalLangV ? 'درباره' : 'About'}}</i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-12 col-md-3 element">
+          <div class="new-overlay">
+            <div class="main-first">
+              <a class="main-first-ALink" [routerLink]="['/videoList']">
+                <i class="main-first-I fa fa-video-camera">{{variable.checkTotalLangV ? 'ویدیو' : 'Video'}}</i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-12 col-md-3 element">
+          <div class="new-overlay firstOverlay">
+            <div class="main-first">
+              <a class="main-first-ALink" [routerLink]="['/addNote']">
+                <i class="main-first-I fa fa-files-o">{{variable.checkTotalLangV ? 'نٌت' : 'Note'}}</i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-12 col-md-3 element">
+          <div class="new-overlay">
+            <div class="main-first">
+              <a class="main-first-ALink" [routerLink]="['/PT']">
+                <i class="main-first-I fa fa-line-chart">{{variable.checkTotalLangV ? 'آموزش خصوصی' : 'private Tutoring'}}</i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- <div class="col-sm-12 col-md-3 element">
           <div class="col-sm-12 col-md-12 new-overlay" id="firstOverlay">
             <div class="main-first">
               <a class="main-first-ALink" [routerLink]= "['/Info']">
@@ -42,7 +80,7 @@
               </a>
             </div>
           </div>
-        </div>
+        </div> -->
 
       </div>
     </div>
@@ -108,7 +146,7 @@
 
 <!-- <section id="GuitarHistory"> -->
 
-  <!-- <div class="container-fluid">
+<!-- <div class="container-fluid">
   <div class="row">
     <div class="col col-12 col-sm-12 col-md-12" style="background-color: orange; z-index: 1;">
 

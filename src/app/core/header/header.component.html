@@ -10,7 +10,7 @@
 
       <ul class="nav navbar-nav">
 
-        <a class="navbar-brand" href="WPage#Home">
+        <a class="navbar-brand" [routerLink]="['/WPage']" href="WPage#Home">
           <img src="../../../../assets/logo3png.png" id="brand-logo" style="cursor: pointer;">
         </a>
 
@@ -18,13 +18,13 @@
           <a class="nav-link" routerLinkActive="active" href="WPage#Events">Events</a>
         </li>
 
-        <li role="menuitem" class="nav-item">
+        <!-- <li role="menuitem" class="nav-item">
           <a class="nav-link" [routerLinkActive]="['active']" href="WPage#GuitarHistory">Guitar History</a>
-        </li>
+        </li> -->
 
-        <li role="menuitem" class="nav-item">
+        <!-- <li role="menuitem" class="nav-item">
           <a class="nav-link" [routerLink]="['/PT']" routerLinkActive="active">Private Tuturing</a>
-        </li>
+        </li> -->
 
         <!-- <li *ngIf="!isLoggedIn" class="nav-item" routerLinkActive="active">
           <a class="nav-link" queryParamsHandling="merge" [routerLink]="['/login']">Login</a>
@@ -40,7 +40,7 @@
       <div class="collapse navbar-collapse  flex-row-reverse" id="collapsibleNavbar">
         <ul class="nav navbar-nav flex-row-reverse">
 
-          <a class="navbar-brand" href="WPage#Home">
+          <a class="navbar-brand" [routerLink]="['/WPage']" href="WPage#Home">
             <img src="../../../../assets/logo3png.png" id="brand-logo" style="cursor: pointer;">
           </a>
 
@@ -48,12 +48,15 @@
             <a class="nav-link" routerLinkActive="active" href="WPage#Events">تازه‌ها</a>
           </li>
 
-          <li role="menuitem" class="nav-item">
+          <!-- <li role="menuitem" class="nav-item">
             <a class="nav-link" routerLinkActive="active" href="WPage#PracticeVideos">آموزش ویدیویی</a>
-          </li>
+          </li> -->
 
-          <li role="menuitem" class="nav-item">
+          <!-- <li role="menuitem" class="nav-item">
             <a class="nav-link" routerLinkActive="active" href="WPage#GuitarHistory">تاریخچه گیتار</a>
+          </li> -->
+          <li *ngIf="isLoggedIn" class="nav-item" routerLinkActive="active">
+            <a class="nav-link" (click)="logout()">{{displayName}} خروج</a>
           </li>
 
         </ul>

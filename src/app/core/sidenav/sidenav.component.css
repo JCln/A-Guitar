@@ -1,5 +1,5 @@
 .sidenav a {
-  padding: .88rem .1rem;
+  padding: 0.88rem 0.1rem;
   margin-top: 1rem;
   text-decoration: none;
   font-size: 2rem;
@@ -20,9 +20,9 @@ img {
 .sidenav a:hover {
   color: #f1f1f1;
   /* background-color: darkred; */
-  background-color: #00BCD4;
+  /* background-color: #00BCD4; */
   /* background-color: #00897B; */
-  font-size: 2.3rem;
+  /* font-size: 2.3rem; */
   padding-left: 1rem;
 }
 .sidenav {
@@ -33,7 +33,7 @@ img {
   z-index: 1;
   top: 0;
   left: 0;
-  background-color: #711;
+  /* background-color: #711; */
   overflow-x: hidden;
   padding-top: 3rem;
 }
@@ -45,6 +45,10 @@ img {
   margin-left: 50px;
 }
 @media only screen and (max-width: 450px) {
-  .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 18px;}
+  .sidenav {
+    padding-top: 15px;
+  }
+  .sidenav a {
+    font-size: 18px;
+  }
 }

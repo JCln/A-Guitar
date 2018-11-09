@@ -1,22 +1,21 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { BrowserModule } from "@angular/platform-browser";
+import { NgModule } from "@angular/core";
 
-import { AppRoutingModule } from './app-routing.module';
+import { AppRoutingModule } from "./app-routing.module";
 
-import { AppComponent } from './app.component';
-import { AuthenticationModule } from './authentication/authentication.module';
-import { CoreModule } from './core/core.module';
-import { SharedModule } from './shared/shared.module';
-import { DashboardModule } from './dashboard/dashboard.module';
-import './shared/rxjs-operators';
-import { HttpClientModule } from '@angular/common/http';
-import { RouterModule } from '@angular/router';
+import { AppComponent } from "./app.component";
+import { AuthenticationModule } from "./authentication/authentication.module";
+import { CoreModule } from "./core/core.module";
+import { SharedModule } from "./shared/shared.module";
+import { DashboardModule } from "./dashboard/dashboard.module";
+import "./shared/rxjs-operators";
+import { HttpClientModule } from "@angular/common/http";
+import { RouterModule } from "@angular/router";
 
+import { CommonService } from "./common.service";
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     RouterModule,
@@ -27,7 +26,7 @@ import { RouterModule } from '@angular/router';
     SharedModule.forRoot(),
     AppRoutingModule
   ],
-  providers: [],
+  providers: [CommonService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

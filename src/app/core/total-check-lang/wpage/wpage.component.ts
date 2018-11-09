@@ -1,16 +1,15 @@
-import { Subscription } from 'rxjs/internal/Subscription';
-import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../../services/auth.service';
-import { GVariables } from '../gvariables';
+import { Subscription } from "rxjs/internal/Subscription";
+import { Component, OnInit } from "@angular/core";
+import { AuthService } from "../../services/auth.service";
+import { GVariables } from "../gvariables";
 
 @Component({
-  selector: 'app-wpage',
-  templateUrl: './wpage.component.html',
-  styleUrls: ['./wpage.component.css']
+  selector: "app-wpage",
+  templateUrl: "./wpage.component.html",
+  styleUrls: ["./wpage.component.css"]
 })
 export class WPageComponent implements OnInit {
-
-  title = 'GUITAR';
+  title = "GUITAR";
   checkTotalLangV: boolean;
 
   isLoggedIn: boolean;
@@ -19,17 +18,21 @@ export class WPageComponent implements OnInit {
   subscription: Subscription;
   displayName: string;
 
-  constructor(private authService: AuthService, protected variable: GVariables) {
+  constructor(private authService: AuthService, public variable: GVariables) {
     // this.checkTotalLangV = variable.checkTotalLangV;
   }
 
   OnInit() {
     try {
-    this.decodedAccessToken = this.authService.getDecodedAccessToken();
-    console.log(this.decodedAccessToken);
-    this.accessTokenExpirationDate = this.authService.getAccessTokenExpirationDateUtc();
-    console.log(this.accessTokenExpirationDate + 'access token expiration date');
-    } catch (error) {}
+      this.decodedAccessToken = this.authService.getDecodedAccessToken();
+      console.log(this.decodedAccessToken);
+      this.accessTokenExpirationDate = this.authService.getAccessTokenExpirationDateUtc();
+      console.log(
+        this.accessTokenExpirationDate + "access token expiration date"
+      );
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   // ngOnInit() {
@@ -52,7 +55,7 @@ export class WPageComponent implements OnInit {
   // }
 
   // ngOnDestroy() {
-    // prevent memory leak when component is destroyed
+  // prevent memory leak when component is destroyed
   //   this.subscription.unsubscribe();
   // }
 
@@ -60,7 +63,5 @@ export class WPageComponent implements OnInit {
   //   this.authService.logout(true);
   // }
 
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }

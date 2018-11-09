@@ -14,12 +14,25 @@
   color: azure;
 }
 .main-first {
-  margin-top: 65rem;
-}
-.main-first-I {
-  /* opacity: 1; */
-  font-size: 3rem;
+  height: 100%;
+  align-items: center;
+  text-align: center;
   display: grid;
+}
+/* .bbbb {
+  height: 100%;
+  align-items: center;
+  text-align: center;
+  display: grid;
+
+} */
+.main-first-I {
+  font-size: 3rem;
+  /* width: 100%; */
+  display: grid;
+  /* align-items: center; */
+  /* text-align: center; */
+  /* align-items: center; */
 }
 
 .flex-center {
@@ -29,7 +42,7 @@
   align-content: center;
 }
 
-@media only screen and (max-width: 576px) {
+/* @media only screen and (max-width: 576px) {
   #Home {
     width: 36rem;
   }
@@ -45,7 +58,7 @@
   #Videos {
     width: 36rem;
   }
-}
+} */
 
 .text-color-size {
   color: white;
@@ -67,8 +80,10 @@
 
 #header {
   width: 100%;
-  height: 48rem;
-  background: url('../../../../assets/Background/h1hd.jpg') no-repeat bottom;
+  /* height: 48rem; */
+  min-height: 48rem;
+  height: 100%;
+  background: url("../../../../assets/Background/h1hd.jpg") no-repeat bottom;
   background-size: cover;
   /* opacity: .7; */
 }
@@ -78,7 +93,7 @@
 }
 
 li {
-  margin-right: .5rem;
+  margin-right: 0.5rem;
 }
 
 .active {
@@ -94,8 +109,8 @@ li {
 }
 
 .fixed-top {
-  opacity: .9;
-  background-color: rgba(255, 255, 255, .2);
+  opacity: 0.9;
+  background-color: rgba(255, 255, 255, 0.2);
 }
 
 .fixed-top :hover {
@@ -103,17 +118,16 @@ li {
   opacity: 1;
 }
 
-.navbar-brand:hover,
+/* .navbar-brand:hover,
 .navbar-nav .nav-item .nav-link:hover {
   border-bottom: .7rem solid white;
-}
+} */
 
-
-@media only screen and (max-width: 576px) {
+/* @media only screen and (max-width: 576px) {
   #PracticeVideos {
     width: 36rem;
   }
-}
+} */
 
 #practiceVideos {
   height: 30rem;
@@ -128,13 +142,13 @@ li {
   text-align: right;
 }
 
-@media only screen and (max-width: 576px) {
+/* @media only screen and (max-width: 576px) {
   #se-to-TP {
     position: absolute;
     width: 36rem;
     min-height: 30rem;
   }
-}
+} */
 
 .history-card {
   background: #323232;
@@ -146,11 +160,11 @@ li {
   padding: 1rem 1rem;
 }
 
-@media only screen and (max-width: 770px) {
+/* @media only screen and (max-width: 770px) {
   .history-card-body {
     margin-bottom: 2rem;
   }
-}
+} */
 
 .history-card-body {
   padding: 0 2rem;
@@ -159,16 +173,16 @@ li {
 
 .history-card-button {
   background: #6863ce;
-  border-radius: .8rem;
+  border-radius: 0.8rem;
   color: white;
   /* margin-left: 13rem; */
   border: #6863ce;
   font-size: 1.2rem;
-  padding: .5rem 1.5rem;
+  padding: 0.5rem 1.5rem;
 }
 
 .history-card-button:hover {
-  box-shadow: 0 .1rem .1rem 0 #6863ce, .1rem .1rem #6863ce;
+  box-shadow: 0 0.1rem 0.1rem 0 #6863ce, 0.1rem 0.1rem #6863ce;
 }
 
 #brand-logo {
@@ -190,12 +204,23 @@ a {
   height: auto;
 }
 
-@media only screen and (max-width: 800px) {
-  #header-img-as {
-    position: relative;
-    z-index: -1;
-    max-width: 100%;
-    height: 48rem;
+@media only screen and (max-width: 768px) {
+  .element {
+    height: 15rem !important;
+    margin-top: 0.4rem;
+  }
+  .main-first-I {
+    font-size: 2.5rem;
+  }
+}
+
+@media only screen and (max-width: 720px) {
+  .element {
+    height: 10rem !important;
+    margin-top: 1rem;
+  }
+  .main-first-I {
+    font-size: 2rem;
   }
 }
 
@@ -205,32 +230,35 @@ a {
 }
 
 .new-overlay {
-  transition: .3s ease;
-  position: absolute;
-  opacity: .2;
+  height: 100%;
+  width: 100%;
+  transition: 0.3s ease;
+  position: relative;
+  opacity: 0.2;
   background-color: peru;
-  height: 96rem;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
-  text-align: center;
+}
+.new-overlay .main-first-I {
+  opacity: 1 !important;
+}
+.element {
+  height: 48rem;
 }
 .element:hover .new-overlay {
   opacity: 1;
 }
-.element:hover .new-overlay {
-  opacity: 1;
+.firstOverlay {
+  opacity: 0.6;
 }
-#firstOverlay {
-  opacity: .4;
-}
-.element:hover #firstOverlay {
+/* .element:hover .firstOverlay {
   opacity: .7;
+} */
+.secondOverlay {
+  opacity: 0.4;
 }
-#secondOverlay {
-  opacity: .2;
-}
-.element:hover #secondOverlay {
+/* .element:hover .secondOverlay {
   opacity: .7;
-}
+} */

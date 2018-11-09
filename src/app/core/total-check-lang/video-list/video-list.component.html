@@ -1,71 +1,91 @@
 <div class="fixed-image-notes">
-    <div class="body">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div style="font-size: 2.2rem; margin: 5rem 2rem 3rem 2rem;" class="text-primary">
-                    <i class="fa fa-tasks"></i>{{ variable.checkTotalLangV ? 'آموزش' : 'Lesson'}}</div>
-            </div>
-        </div>
-
-        <div class="container">
-            <div class="row">
-                <div class="justify-content-center" *ngFor="let Tvideos of videolist; trackBy: trackByFn">
-
-                    <div class="text-primary">{{Tvideos.level}}
-                        <hr>
-                    </div>
-                    <div class="justify-content-center">
-                        <div class="justify-content-center col-sm-12 col-md-4 col-lg-4 float-left" style="margin-bottom: 3rem;"
-                            *ngFor="let video of Tvideos.videos; let i = index">
-
-                            <div class="element">
-                                <img class="card-img-top position-relative float-left" class="image" (error)="ImgErrorHandler($event)"
-                                    src={{video.src}} alt="Card image cap">
-
-                                <button *ngIf="!variable.checkTotalLangV && !video.isFree" class="btn btn-warning middle">{{video.isFree
-                                    ? 'تکمیل خرید' : 'Complete the purchase'}}</button>
-                                <button *ngIf="variable.checkTotalLangV && !video.isFree" class="btn btn-warning middle">{{video.isFree
-                                    ? 'Complete the purchase' : 'تکمیل خرید'}}</button>
-                            </div>
-
-
-                            <div class="justify-content-center">
-                                <h4 style="text-align: left; float: left">
-                                    <span *ngIf="variable.checkTotalLangV" class="badge badge-primary">{{video.isFree ?
-                                        free : sale}}</span>
-                                    <span *ngIf="!variable.checkTotalLangV" class="badge" style="background-color: #009688">{{video.isFree
-                                        ? 'free' : 'sale'}}</span>
-                                </h4>
-                                <h5 style="text-align: right">
-                                    <span class="badge badge-light">{{i+1}}</span>
-                                </h5>
-                            </div>
-
-                            <div *ngIf="!variable.checkTotalLangV" class="card-body text-white" style="background-color: #009688">
-                                <p class="card-text">Some text.</p>
-                            </div>
-
-                            <div *ngIf="variable.checkTotalLangV" class="card-body bg-primary text-white">
-                                <p class="card-text" style="text-align: right">خوب قیمتی دارد</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+  <div class="body">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div style="font-size: 2.2rem; margin: 5rem 2rem 3rem 2rem;" class="text-primary">
+          <i class="fa fa-tasks"></i>{{ variable.checkTotalLangV ? 'آموزش' : 'Lesson'}}</div>
+      </div>
     </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="justify-content-center" *ngFor="let Tvideos of videolist; trackBy: trackByFn">
+
+          <div class="text-primary">{{Tvideos.level}}
+            <hr>
+          </div>
+          <div class="justify-content-center">
+            <div class="justify-content-center col-sm-12 col-md-4 col-lg-4 float-left" style="margin-bottom: 3rem;"
+              *ngFor="let video of Tvideos.videos; let i = index">
+
+              <div class="element">
+                <img class="card-img-top position-relative float-left" class="image" (error)="ImgErrorHandler($event)"
+                  src={{video.src}} alt="Card image cap">
+
+                <button *ngIf="!variable.checkTotalLangV && !video.isFree" class="btn btn-warning middle">{{video.isFree
+                  ? 'تکمیل خرید' : 'Complete the purchase'}}</button>
+                <button *ngIf="variable.checkTotalLangV && !video.isFree" class="btn btn-warning middle">{{video.isFree
+                  ? 'Complete the purchase' : 'تکمیل خرید'}}</button>
+              </div>
+
+
+              <div class="justify-content-center">
+                <h4 style="text-align: left; float: left">
+                  <span *ngIf="variable.checkTotalLangV" class="badge badge-primary">{{video.isFree ?
+                    free : sale}}</span>
+                  <span *ngIf="!variable.checkTotalLangV" class="badge" style="background-color: #009688">{{video.isFree
+                    ? 'free' : 'sale'}}</span>
+                </h4>
+                <h5 style="text-align: right">
+                  <span class="badge badge-light">{{i+1}}</span>
+                </h5>
+              </div>
+
+              <div *ngIf="!variable.checkTotalLangV" class="card-body text-white" style="background-color: #009688">
+                <p class="card-text">Some text.</p>
+              </div>
+
+              <div *ngIf="variable.checkTotalLangV" class="card-body bg-primary text-white">
+                <p class="card-text" style="text-align: right">خوب قیمتی دارد</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
 
+<!-- <form #userForm = "ngForm" (ngSubmit)= "onSave(userForm.value)" novalidate> -->
+  <form novalidate>
+  <table>
+    <tr>
+      <td>
+        <!-- <input name="id" type="hidden" [(ngModel)]="id">
+        <input name="name" type="text" [(ngModel)]="name" required> -->
+      </td>
+    </tr>
+  </table>
+  <table>
+    <tr>
+      <td>id</td>
+      <td>Name</td>
+      <td>Address</td>
+    </tr>
+
+    <tr *ngFor="let kk of Repdata; let ind = index">
+      <td>{{ind + 1 }}</td>
+      <td>{{kk.name}}</td>
+    </tr>
+  </table>
+</form>
 
 
 
 
 
-
-<!-- <app-header></app-header>
-<app-sidenav></app-sidenav>
-<div class="body">
+<!--<div class="body">
   <div class="container">
     <div class="row justify-content-center">
       <div style="font-size: 2.2rem; margin: 5rem 2rem 3rem 2rem;" class="text-danger">

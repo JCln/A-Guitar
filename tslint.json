@@ -155,6 +155,8 @@
     "use-life-cycle-interface": true,
     "use-pipe-transform-interface": true,
     "component-class-suffix": true,
+    "interface-name": false,
+    // "newline-before-return": true,
     "directive-class-suffix": true
   }
 }

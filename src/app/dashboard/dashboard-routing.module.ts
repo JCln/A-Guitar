@@ -1,12 +1,13 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import { ProtectedPageComponent } from './protected-page/protected-page.component';
+import { NgModule } from "@angular/core";
+import { Routes, RouterModule } from "@angular/router";
+import { ProtectedPageComponent } from "./protected-page/protected-page.component";
 // import { AuthGuardPermission } from '../core/services/auth-config-permission';
 // import { AuthGuardService } from '../core/services/auth.guard';
 // import { CallProtectedApiComponent } from './call-protected-api/call-protected-api.component';
 // import { PageComponent } from '../core/total-check-lang/page/page.component';
 
 const routes: Routes = [
+  { path: "protectedPage", component: ProtectedPageComponent }
   // {path: 'protectedPage' , component: ProtectedPageComponent},
   // {
   //   path: 'protectedPage',
@@ -47,4 +48,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class DashboardRoutingModule { }
+export class DashboardRoutingModule {}
