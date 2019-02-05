@@ -1,4 +1,5 @@
 <div data-target="#Events" data-spy="scroll">
+
   <nav class="navbar navbar-expand-md bg-secondary navbar-dark fixed-top">
 
 
@@ -8,45 +9,30 @@
 
     <div *ngIf="!variable.checkTotalLangV; else changeLang" class="collapse navbar-collapse" id="collapsibleNavbar">
 
-      <ul class="nav navbar-nav">
+      <ul class="nav navbar-nav" id="changeLangTransition">
 
-        <a class="navbar-brand" [routerLink]="['/WPage']" href="WPage#Home">
-          <img src="../../../../assets/logo3png.png" id="brand-logo" style="cursor: pointer;">
+        <a class="navbar-brand" [routerLink]="['/WPage']">
+          <img src="../../../assets/siteLogo2.jpg" id="brand-logo" style="cursor: pointer;">
         </a>
-
-        <li role="menuitem" class="nav-item">
-          <a class="nav-link" routerLinkActive="active" href="WPage#Events">Events</a>
-        </li>
-
-        <!-- <li role="menuitem" class="nav-item">
-          <a class="nav-link" [routerLinkActive]="['active']" href="WPage#GuitarHistory">Guitar History</a>
-        </li> -->
-
-        <!-- <li role="menuitem" class="nav-item">
-          <a class="nav-link" [routerLink]="['/PT']" routerLinkActive="active">Private Tuturing</a>
-        </li> -->
-
-        <!-- <li *ngIf="!isLoggedIn" class="nav-item" routerLinkActive="active">
-          <a class="nav-link" queryParamsHandling="merge" [routerLink]="['/login']">Login</a>
-        </li> -->
-        <li *ngIf="isLoggedIn" class="nav-item" routerLinkActive="active">
-          <a class="nav-link" (click)="logout()">Logoff [{{displayName}}]</a>
+        <li *ngIf="authService.isLoggedIn()" class="nav-item" routerLinkActive="active">
+          <a class="nav-link" (click)="logOut()">{{authService.currentUser.userName}}</a>
         </li>
 
       </ul>
     </div>
 
+    <!-- for persian language -->
     <ng-template #changeLang>
       <div class="collapse navbar-collapse  flex-row-reverse" id="collapsibleNavbar">
         <ul class="nav navbar-nav flex-row-reverse">
 
-          <a class="navbar-brand" [routerLink]="['/WPage']" href="WPage#Home">
-            <img src="../../../../assets/logo3png.png" id="brand-logo" style="cursor: pointer;">
+          <a class="navbar-brand" [routerLink]="['/WPage']">
+            <img src="../../../assets/siteLogo2.jpg" id="brand-logo" style="cursor: pointer;">
           </a>
 
-          <li role="menuitem" class="nav-item">
-            <a class="nav-link" routerLinkActive="active" href="WPage#Events">تازه‌ها</a>
-          </li>
+          <!-- <li role="menuitem" class="nav-item">
+            <a class="nav-link" routerLink= "/WPage" href="WPage#Events">تازه‌ها</a>
+          </li> -->
 
           <!-- <li role="menuitem" class="nav-item">
             <a class="nav-link" routerLinkActive="active" href="WPage#PracticeVideos">آموزش ویدیویی</a>
@@ -55,19 +41,30 @@
           <!-- <li role="menuitem" class="nav-item">
             <a class="nav-link" routerLinkActive="active" href="WPage#GuitarHistory">تاریخچه گیتار</a>
           </li> -->
-          <li *ngIf="isLoggedIn" class="nav-item" routerLinkActive="active">
-            <a class="nav-link" (click)="logout()">{{displayName}} خروج</a>
+          <li *ngIf="authService.isLoggedIn()" class="nav-item" routerLinkActive="active">
+            <a class="nav-link" (click)="logOut()">{{authService.currentUser.userName}}</a>
           </li>
 
         </ul>
+
+        <!-- <ul class="nav navbar-nav navbar-right">
+          <li *ngIf="authService.isLoggedIn()">
+            <a>Welcome {{ authService.currentUser.userName }}</a>
+          </li>
+          <li *ngIf="!authService.isLoggedIn()">
+            <a [routerLink]="['/login']">Log In</a>
+          </li>
+          <li *ngIf="authService.isLoggedIn()">
+            <a (click)="logOut()">Log Out</a>
+          </li>
+        </ul> -->
       </div>
 
 
     </ng-template>
 
-
-    <div class="btn btn-dark">
-      <span class="switch switch-sm">
+    <div class="btn btn-dark ">
+      <span class="switch switch-sm font-family-class">
         <label for="switch-sm">English</label>
         <input type="checkbox" class="switch" id="switch-sm" (click)=checkLang()>
         <label for="switch-sm">فارسی</label>
@@ -75,15 +72,5 @@
     </div>
 
   </nav>
-  <!-- <div class="container-fluid">
-        <div class="row justify-content-start col-sm-12 col-md-6">
-          <div class="col col-sm-12">
-            <img src="../../../../assets/a4.jpg" id="header-img-as">
-          </div>
-        </div>
-      </div> -->
-</div>
 
-<!-- <ng-template #faLang>
-  <app-page></app-page>
-</ng-template> -->
+</div>

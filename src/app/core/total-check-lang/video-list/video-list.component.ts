@@ -1,33 +1,64 @@
-import { Component, OnInit, Output, EventEmitter, Input } from "@angular/core";
+import { catchError } from "rxjs/operators";
+import {
+  Component,
+  OnInit,
+  Output,
+  EventEmitter,
+  Input,
+  AfterViewInit,
+  OnDestroy
+} from "@angular/core";
 import { Tvideos } from "./videos";
 import { GVariables } from "../gvariables";
 
 import { CommonService } from "./../../../common.service";
+declare let videoJs: any;
 
 @Component({
   selector: "app-video-list",
   templateUrl: "./video-list.component.html",
-  styleUrls: ["./video-list.component.css"]
+  styleUrls: ["./video-list.component.css", "./video-list.component.scss"]
 })
-export class VideoListComponent implements OnInit {
+export class VideoListComponent implements OnInit, AfterViewInit, OnDestroy {
   checkTotalLangV: boolean;
-  // @Output() changeLang = new EventEmitter();
 
-  videolist: any[];
+  id: string;
+  private videoJSplayer: any;
+
+  videolist: any[] = Tvideos;
   free = "رایگان";
   sale = "خرید";
+
+  Repdata;
+  valbutton = "save";
+
+  videooo = [
+    "https://www.aparat.com/video/video/embed/videohash/zZA7B/vt/frame"
+  ];
 
   constructor(
     protected variable: GVariables,
     private commonService: CommonService
   ) {}
 
-  Repdata;
-  valbutton = "save";
+  ngAfterViewInit() {
+    // this.videoJSplayer = videoJs(document.getElementById('video_player_id'), {} , function() {
+    // this.video
+    // });
+  }
+
+  ngOnDestroy() {
+    // console.log('Deinit - Destroyed Component');
+    // this.videoJSplayer.dispose();
+  }
 
   ngOnInit() {
-    this.videolist = Tvideos;
-    this.commonService.getUser().subscribe(data => (this.Repdata = data));
+    try {
+      this.videolist = Tvideos;
+      // this.commonService.getUser().subscribe(data => (this.Repdata = data).catchError(console.log(data)));
+    } catch (e) {
+      console.log(e);
+    }
   }
   // onSave = function (user, isValid: boolean) {
   //   user.mode = this.valbutton;
@@ -55,12 +86,15 @@ export class VideoListComponent implements OnInit {
   };
 
   ImgErrorHandler(event) {
-    event.target.src = "../../../assets/4.png";
+    event.target.src = "../../../../assets/p4.jpg";
   }
   getItemFromServer() {
     return (this.videolist = Tvideos);
   }
   trackByFn(index, item) {
     return index;
+  }
+  addOrRemoveVideos() {
+    document.getElementById("surprise").innerHTML = "";
   }
 }

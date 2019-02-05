@@ -7,29 +7,55 @@
       </div>
     </div>
 
+
     <div class="container">
       <div class="row">
-        <div class="justify-content-center" *ngFor="let Tvideos of videolist; trackBy: trackByFn">
-
-          <div class="text-primary">{{Tvideos.level}}
-            <hr>
-          </div>
-          <div class="justify-content-center">
-            <div class="justify-content-center col-sm-12 col-md-4 col-lg-4 float-left" style="margin-bottom: 3rem;"
-              *ngFor="let video of Tvideos.videos; let i = index">
-
-              <div class="element">
-                <img class="card-img-top position-relative float-left" class="image" (error)="ImgErrorHandler($event)"
-                  src={{video.src}} alt="Card image cap">
-
-                <button *ngIf="!variable.checkTotalLangV && !video.isFree" class="btn btn-warning middle">{{video.isFree
-                  ? 'تکمیل خرید' : 'Complete the purchase'}}</button>
-                <button *ngIf="variable.checkTotalLangV && !video.isFree" class="btn btn-warning middle">{{video.isFree
-                  ? 'Complete the purchase' : 'تکمیل خرید'}}</button>
-              </div>
 
 
-              <div class="justify-content-center">
+        <div class="video_embed_frame mb-2 mt-2 pt-2"><span style="padding-top: 57%; margin-bottom: 3rem"></span></div>
+        <div class="h_iframe-aparat_embed_frame col-sm-12 col-md-6 float-left m-2">
+          <span style="display: block;padding-top: 57%"></span><iframe *ngFor="let videolist of videooo" allowFullScreen="true"
+            webkitallowfullscreen="true" mozallowfullscreen="true" src="{{videolist}}">{{videolist}}</iframe>
+        </div>
+      </div>
+
+
+    </div>
+    <h3>Next videos</h3><br>
+    <hr>
+
+    <div class="container">
+      <div class="row">
+
+        <!-- <div class="justify-content-center" *ngFor="let Tvideos of videolist; trackBy: trackByFn"> -->
+
+        <div class="video_embed_frame mb-2 mt-2 pt-2"><span style="padding-top: 57%; margin-bottom: 3rem"></span></div>
+
+
+
+        <div class="h_iframe-aparat_embed_frame col-sm-12 col-md-6 col-lg-6 float-left"> <span style="display: block;padding-top: 57%;"></span><iframe
+            src="https://www.aparat.com/video/video/embed/videohash/zZA7B/vt/frame" allowFullScreen="true"
+            webkitallowfullscreen="true" mozallowfullscreen="true"></iframe></div>
+
+        <div class="h_iframe-aparat_embed_frame col-sm-12 col-md-6 col-lg-6"> <span style="display: block;padding-top: 57%"></span><iframe
+            src="https://www.aparat.com/video/video/embed/videohash/zZA7B/vt/frame" allowFullScreen="true"
+            webkitallowfullscreen="true" mozallowfullscreen="true"></iframe></div>
+
+        <div class="h_iframe-aparat_embed_frame col-sm-12 col-md-6"> <span style="display: block;padding-top: 57%"></span><iframe
+            src="https://www.aparat.com/video/video/embed/videohash/C9yq2/vt/frame" allowFullScreen="true"
+            webkitallowfullscreen="true" mozallowfullscreen="true"></iframe>
+        </div>
+
+        <div class="h_iframe-aparat_embed_frame col-sm-12 col-md-6"> <span style="display: block;padding-top: 57%"></span><iframe
+            src="https://www.aparat.com/video/video/embed/videohash/zD4iK/vt/frame" allowFullScreen="true"
+            webkitallowfullscreen="true" mozallowfullscreen="true"></iframe>
+        </div>
+        <!-- </div> -->
+
+        <!-- <div class="element"></div> -->
+
+
+        <!-- <div class="justify-content-center">
                 <h4 style="text-align: left; float: left">
                   <span *ngIf="variable.checkTotalLangV" class="badge badge-primary">{{video.isFree ?
                     free : sale}}</span>
@@ -48,40 +74,40 @@
               <div *ngIf="variable.checkTotalLangV" class="card-body bg-primary text-white">
                 <p class="card-text" style="text-align: right">خوب قیمتی دارد</p>
               </div>
-            </div>
-          </div>
-        </div>
+            </div> -->
+
+
+        <!-- </div> -->
+        <!-- </div> -->
       </div>
     </div>
   </div>
+  <div class="container">
+    <div class="row">
+      <form class="form-inline">
+        <div class="col-md-12 mb-3">
+          <label *ngIf="!variable.checkTotalLangV" for="inlineFormInput">SRC</label>
+          <label *ngIf="variable.checkTotalLangV" for="inlineFormInput">سورس</label>
+          <input *ngIf="!variable.checkTotalLangV" type="text" class="form-control" id="inlineFormInput" placeholder="insert JUST iframe src"
+            required>
+          <input *ngIf="variable.checkTotalLangV" type="text" class="form-control" id="inlineFormInput" placeholder="فقط سورس را وارد فرمایید"
+            required>
+          <div class="invalid-feedback">
+            سورس بدرستی وارد نشده است.
+          </div>
+          <label for="inlineFormSubmit"></label>
+          <input type="button" class="btn btn-primary" value="Submit" id="inlineFormSubmit">
+
+        </div>
+      </form>
+    </div>
+
+  </div>
+
+  <app-ng2-file-upload-test></app-ng2-file-upload-test>
 </div>
 
-
 <!-- <form #userForm = "ngForm" (ngSubmit)= "onSave(userForm.value)" novalidate> -->
-  <form novalidate>
-  <table>
-    <tr>
-      <td>
-        <!-- <input name="id" type="hidden" [(ngModel)]="id">
-        <input name="name" type="text" [(ngModel)]="name" required> -->
-      </td>
-    </tr>
-  </table>
-  <table>
-    <tr>
-      <td>id</td>
-      <td>Name</td>
-      <td>Address</td>
-    </tr>
-
-    <tr *ngFor="let kk of Repdata; let ind = index">
-      <td>{{ind + 1 }}</td>
-      <td>{{kk.name}}</td>
-    </tr>
-  </table>
-</form>
-
-
 
 
 
@@ -146,3 +172,34 @@ script>
     })
     .setTween("#animate1", 0.5 , {backgroundColor: "green", scale: 2.5 }).addIndicators({name: "1 (duration: 0)"}).addTo(controller);
   </script> -->
+<!-- <video *ngIf="../" id="video_{{idx}}" class="video-js vjs-default-skin vjs-big-play-centered vjs-16-9" controls preload="auto"
+  width="640" height="264">
+
+  <source [src]="url" type="video/mp4" />
+
+</video>
+
+<video *ngIf="videoUrl" id="video_player_id" class="video-js vjs-big-play-centered" controls preload="auto">
+  <source src="{{listing.url}}" type="video/mp4">
+</video> -->
+
+<!-- <video *ngIf="url" id="video_player_id" class="video-js vjs-4-3 vjs-16-9 vjs-big-play-centered" controls preload="auto" width="640" height= "264">
+  <source [src]="url" type="video/mp4" />
+
+</video>
+ -->
+
+<!-- this is indide div class= element -->
+<!-- <video id="video_player_id" class="video-js vjs-4-3 vjs-16-9 vjs-default-skin vjs-big-play-centered" controls preload="auto"
+                  data-setup='{}' poster="{{video.poster}}" width="640" height="264">
+                  <source src="{{video.src}}" type="video/mp4">
+                </video> -->
+
+
+<!-- <img class="card-img-top position-relative float-left" class="image" (error)="ImgErrorHandler($event)"
+                  src={{video.src}} alt="Card image cap"> -->
+
+<!-- <button *ngIf="!variable.checkTotalLangV && !video.isFree" class="btn btn-warning middle">{{video.isFree
+                  ? 'تکمیل خرید' : 'Complete the purchase'}}</button>
+                <button *ngIf="variable.checkTotalLangV && !video.isFree" class="btn btn-warning middle">{{video.isFree
+                  ? 'Complete the purchase' : 'تکمیل خرید'}}</button> -->

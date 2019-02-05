@@ -12,18 +12,18 @@
 </div>
 <nav class="sidenav" [hidden]="!show">
     <a>
-      <img src="../../../../assets/logo.png">
+      <img src="../../../assets/designer.png">
     </a>
 
     <a class="nav-link" routerLink="/videoList" routerLinkActive="active">
-      <i class="fa fa-music"></i>
+      <i class="fa fa-film"></i>
     </a>
 
     <a class="nav-link" [routerLink]="['/addNote']" routerLinkActive="active">
       <i class="fa fa-bookmark-o"></i>
     </a>
 
-    <a class="nav-link" routerLink="/" routerLinkActive="active">
+    <a class="nav-link" [routerLink]="['/Info']" routerLinkActive="active">
       <i class="fa fa-info"></i>
     </a>
 

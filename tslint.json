@@ -15,9 +15,6 @@
     "rxjs-no-unused-add": {
       "severity": "error"
     },
-    "rxjs-no-wholesale": {
-      "severity": "error"
-    },
     "rxjs-no-subject-unsubscribe": {
       "severity": "error"
     },

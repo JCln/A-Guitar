@@ -1,3 +1,4 @@
+import { Ng2FileUploadTestComponent } from "./video-list/ng2-file-upload-test/ng2-file-upload-test.component";
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
 
@@ -12,7 +13,16 @@ const routes: Routes = [
   { path: "Info", component: InfoComponent },
 
   { path: "addNote", component: AddNoteComponent },
-  { path: "videoList", component: VideoListComponent },
+  {
+    path: "videoList",
+    component: VideoListComponent,
+    children: [
+      {
+        path: "Ng2FileUploadTest",
+        component: Ng2FileUploadTestComponent
+      }
+    ]
+  },
   { path: "PT", component: PTComponent },
   { path: "", redirectTo: "WPage", pathMatch: "full" }
 ];

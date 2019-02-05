@@ -1,7 +1,8 @@
-import { Subscription } from "rxjs/internal/Subscription";
 import { Component, OnInit } from "@angular/core";
-import { AuthService } from "../../services/auth.service";
+
+import { Subscription } from "rxjs/internal/Subscription";
 import { GVariables } from "../gvariables";
+import { AuthService } from "./../../../authentication/services/auth.service";
 
 @Component({
   selector: "app-wpage",
@@ -9,7 +10,7 @@ import { GVariables } from "../gvariables";
   styleUrls: ["./wpage.component.css"]
 })
 export class WPageComponent implements OnInit {
-  title = "GUITAR";
+  title = "Art";
   checkTotalLangV: boolean;
 
   isLoggedIn: boolean;
@@ -19,20 +20,20 @@ export class WPageComponent implements OnInit {
   displayName: string;
 
   constructor(private authService: AuthService, public variable: GVariables) {
-    // this.checkTotalLangV = variable.checkTotalLangV;
+    this.checkTotalLangV = variable.checkTotalLangV;
   }
 
   OnInit() {
-    try {
-      this.decodedAccessToken = this.authService.getDecodedAccessToken();
-      console.log(this.decodedAccessToken);
-      this.accessTokenExpirationDate = this.authService.getAccessTokenExpirationDateUtc();
-      console.log(
-        this.accessTokenExpirationDate + "access token expiration date"
-      );
-    } catch (error) {
-      console.log(error);
-    }
+    // try {
+    //   this.decodedAccessToken = this.authService.getDecodedAccessToken();
+    //   console.log(this.decodedAccessToken);
+    //   this.accessTokenExpirationDate = this.authService.getAccessTokenExpirationDateUtc();
+    //   console.log(
+    //     this.accessTokenExpirationDate + 'access token expiration date'
+    //   );
+    // } catch (error) {
+    //   console.log(error);
+    // }
   }
 
   // ngOnInit() {

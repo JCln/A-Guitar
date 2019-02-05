@@ -83,7 +83,7 @@
   /* height: 48rem; */
   min-height: 48rem;
   height: 100%;
-  background: url("../../../../assets/Background/h1hd.jpg") no-repeat bottom;
+  background: url("../../../../assets/p5.jpg") no-repeat bottom;
   background-size: cover;
   /* opacity: .7; */
 }
@@ -235,7 +235,8 @@ a {
   transition: 0.3s ease;
   position: relative;
   opacity: 0.2;
-  background-color: peru;
+  background-color: mediumpurple;
+  opacity: 0.2;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);

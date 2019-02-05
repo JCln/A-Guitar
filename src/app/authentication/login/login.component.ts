@@ -1,9 +1,10 @@
-import { Component, OnInit } from "@angular/core";
-import { Credentials } from "../../core/models/credentials";
-import { AuthService } from "../../core/services/auth.service";
-import { Router, ActivatedRoute } from "@angular/router";
 import { HttpErrorResponse } from "@angular/common/http";
-import { FormsModule, NgForm } from "@angular/forms";
+import { Component, OnInit } from "@angular/core";
+import { NgForm } from "@angular/forms";
+import { ActivatedRoute, Router } from "@angular/router";
+
+import { Credentials } from "../../core/models/credentials";
+import { AuthService } from "../services/auth.service";
 
 @Component({
   selector: "app-login",
@@ -13,7 +14,7 @@ import { FormsModule, NgForm } from "@angular/forms";
 export class LoginComponent implements OnInit {
   model: Credentials = { username: "", password: "", rememberMe: false };
   error = "";
-  returnUrl: string;
+  returnUrl: string | null = null;
 
   constructor(
     private authService: AuthService,
@@ -24,32 +25,29 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
     // reset the login status
     this.authService.logout(false);
+
+    // get the return url from route parameters
     this.returnUrl = this.route.snapshot.queryParams["returnUrl"];
   }
 
   submitForm(form: NgForm) {
+    console.log(form);
+
     this.error = "";
     this.authService.login(this.model).subscribe(
       isLoggedIn => {
         if (isLoggedIn) {
           if (this.returnUrl) {
-            console.log(
-              JSON.stringify(this.router.navigate([this.returnUrl])) +
-                "this is login component"
-            );
             this.router.navigate([this.returnUrl]);
           } else {
-            // this.router.navigate(['protectedPage']);
-            this.router.navigate(["/WPage"]);
+            this.router.navigate(["/protectedPage"]);
           }
         }
       },
       (error: HttpErrorResponse) => {
-        console.log("Login error", error);
+        console.error("Login error", error);
         if (error.status === 401) {
-          this.error = "Invalid Username or Password. Please try again.";
-        } else if (error.status === 403) {
-          this.error = "شبکه متصل نیست و یا دسترسی شما مجاز نمی باشد";
+          this.error = "Invalid User name or Password. Please try again.";
         } else {
           this.error = `${error.statusText}: ${error.message}`;
         }

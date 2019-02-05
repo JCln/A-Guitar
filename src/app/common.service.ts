@@ -21,9 +21,13 @@ export class CommonService {
   }
 
   getUser() {
-    return this.http
-      .get("http://localhost:5500/api/getUser/")
-      .pipe(map((response: Response) => response.json()));
+    try {
+      return this.http
+        .get("http://localhost:5500/api/getUser/")
+        .pipe(map((response: Response) => response.json()));
+    } catch (e) {
+      console.log(e);
+    }
   }
   deleteUser(id) {
     return this.http
